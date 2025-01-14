@@ -1065,7 +1065,7 @@ def main(sw, reeds_path, inputs_case, periodtype='rep', make_plots=1, figpathtai
         ## Hydro capacity factors by szn
         'cf_hyd': [cf_hyd_out.round(decimals), True, False],
         ## Hydro capacity adjustment factors by szn
-        'cap_hyd_szn_adj': [hydcapadj_out, True, False],
+        'cap_hyd_szn_adj': [hydcapadj_out.round(decimals), True, False],
         ## mapping from one timeslice to the next
         'nexth': [nexth, True, True],
         ## Hours to actual season mapping (h,allszn)
