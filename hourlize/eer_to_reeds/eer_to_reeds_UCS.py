@@ -4,7 +4,6 @@ from glob import glob
 import os
 from pathlib import Path
 import us
-# import xarray as xr
 
 if __name__ == "__main__":
 
@@ -69,9 +68,9 @@ if __name__ == "__main__":
     combined_disagg['index'] = np.tile(np.arange(0,8760),6*3)
     combined_disagg = combined_disagg.set_index(['scenarios','year','index'])
 
-    # reformat the data to match other datasets from EER in ReEDS.
-    # Specifically, indices appear to be (hour, ba) with years as the
-    # data variables (i.e., columns).
+    # reformat the data to match other datasets from EER in ReEDS. Specifically,
+    # indices appear to be (hour, ba) with years as the data variables (i.e.,
+    # columns).
     print("Formatting data...")
     combined_formatted = combined_disagg.reset_index()\
                                         .melt(id_vars=['scenarios',
