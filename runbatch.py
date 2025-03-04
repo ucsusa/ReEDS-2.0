@@ -1426,44 +1426,44 @@ def runModel(options, caseSwitches, niter, reeds_path, ccworkers, startiter,
             )
 
         ## Run Bokeh
-        bokehdir = os.path.join(reeds_path,"postprocessing","bokehpivot","reports")
-        OPATH.writelines(
-            'python ' + os.path.join(bokehdir,"interface_report_model.py") + ' "ReEDS 2.0" '
-            + os.path.join(reeds_path,"runs",batch_case) + " all No none "
-            + os.path.join(bokehdir,"templates","reeds2","standard_report_reduced.py") + ' "html,excel,csv" one '
-            + os.path.join(reeds_path,"runs",batch_case,"outputs","reeds-report-reduced") + ' No\n')
-        OPATH.writelines(
-            'python ' + os.path.join(bokehdir,"interface_report_model.py") + ' "ReEDS 2.0" '
-            + os.path.join(reeds_path,"runs",batch_case) + " all No none "
-            + os.path.join(bokehdir,"templates","reeds2","standard_report_expanded.py") + ' "html,excel" one '
-            + os.path.join(reeds_path,"runs",batch_case,"outputs","reeds-report") + ' No\n')
-        OPATH.writelines(
-            'python ' + os.path.join(bokehdir,"interface_report_model.py") + ' "ReEDS 2.0" '
-            + os.path.join(reeds_path,"runs",batch_case) + " all No none "
-            + os.path.join(bokehdir,"templates","reeds2","state_report.py") + ' "csv" one '
-            + os.path.join(reeds_path,"runs",batch_case,"outputs","reeds-report-state") + ' No\n\n')
-        OPATH.writelines('python postprocessing/vizit/vizit_prep.py ' + '"{}"'.format(os.path.join(casedir,'outputs')) + '\n\n')
+        # bokehdir = os.path.join(reeds_path,"postprocessing","bokehpivot","reports")
+        # OPATH.writelines(
+        #     'python ' + os.path.join(bokehdir,"interface_report_model.py") + ' "ReEDS 2.0" '
+        #     + os.path.join(reeds_path,"runs",batch_case) + " all No none "
+        #     + os.path.join(bokehdir,"templates","reeds2","standard_report_reduced.py") + ' "html,excel,csv" one '
+        #     + os.path.join(reeds_path,"runs",batch_case,"outputs","reeds-report-reduced") + ' No\n')
+        # OPATH.writelines(
+        #     'python ' + os.path.join(bokehdir,"interface_report_model.py") + ' "ReEDS 2.0" '
+        #     + os.path.join(reeds_path,"runs",batch_case) + " all No none "
+        #     + os.path.join(bokehdir,"templates","reeds2","standard_report_expanded.py") + ' "html,excel" one '
+        #     + os.path.join(reeds_path,"runs",batch_case,"outputs","reeds-report") + ' No\n')
+        # OPATH.writelines(
+        #     'python ' + os.path.join(bokehdir,"interface_report_model.py") + ' "ReEDS 2.0" '
+        #     + os.path.join(reeds_path,"runs",batch_case) + " all No none "
+        #     + os.path.join(bokehdir,"templates","reeds2","state_report.py") + ' "csv" one '
+        #     + os.path.join(reeds_path,"runs",batch_case,"outputs","reeds-report-state") + ' No\n\n')
+        # OPATH.writelines('python postprocessing/vizit/vizit_prep.py ' + '"{}"'.format(os.path.join(casedir,'outputs')) + '\n\n')
 
-        if int(caseSwitches['delete_big_files']):
-            for file in [
-                os.path.join(inputs_case, 'recf.h5'),
-                os.path.join(inputs_case, 'load.h5'),
-                os.path.join(inputs_case, 'csp_profiles.h5'),
-                os.path.join(inputs_case, 'rsc_combined.csv'),
-                ### Uncomment the following two lines to delete the .g00 files
-                # os.path.join('g00files', restartfile + '.g00'),
-                # os.path.join('g00files', restartfile.rstrip(str(cur_year)+'_') + '.g00'),
-            ]:
-                write_delete_file(checkfile=file, deletefile=file, PATH=OPATH)
-            OPATH.writelines('')
+        # if int(caseSwitches['delete_big_files']):
+        #     for file in [
+        #         os.path.join(inputs_case, 'recf.h5'),
+        #         os.path.join(inputs_case, 'load.h5'),
+        #         os.path.join(inputs_case, 'csp_profiles.h5'),
+        #         os.path.join(inputs_case, 'rsc_combined.csv'),
+        #         ### Uncomment the following two lines to delete the .g00 files
+        #         # os.path.join('g00files', restartfile + '.g00'),
+        #         # os.path.join('g00files', restartfile.rstrip(str(cur_year)+'_') + '.g00'),
+        #     ]:
+        #         write_delete_file(checkfile=file, deletefile=file, PATH=OPATH)
+        #     OPATH.writelines('')
 
-        if int(caseSwitches['transmission_maps']):
-            OPATH.writelines('python postprocessing/transmission_maps.py -c {} -y {}\n'.format(
-                casedir, (
-                    solveyears[-1]
-                    if int(caseSwitches['transmission_maps']) > int(solveyears[-1])
-                    else caseSwitches['transmission_maps'])
-            ))
+        # if int(caseSwitches['transmission_maps']):
+        #     OPATH.writelines('python postprocessing/transmission_maps.py -c {} -y {}\n'.format(
+        #         casedir, (
+        #             solveyears[-1]
+        #             if int(caseSwitches['transmission_maps']) > int(solveyears[-1])
+        #             else caseSwitches['transmission_maps'])
+        #     ))
 
         ### Write the call to the R2X tests
         pipe = '2>&1 | tee -a' if LINUXORMAC else '>>'
