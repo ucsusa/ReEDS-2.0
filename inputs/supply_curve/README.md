@@ -6,3 +6,7 @@ The CSP resource classes are defined as follows:
 * 3: 0.26 ≤ CF
 
 Site-level CSP supply curve costs are copied from the site-level supply curve costs for utility-scale photovoltaics (UPV). The mapping code is available on the ReEDS input-processing repo at https://github.nrel.gov/ReEDS/ReEDS-2.0_Input_Processing/tree/main/csp.
+
+### Filtering NULL values
+Some files have null values for the `dist_spur_km` column leading to unphysical results. The `filter_null.py` script removes the rows
+with NULL spur lengths.

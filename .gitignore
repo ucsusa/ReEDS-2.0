@@ -19,8 +19,9 @@ inout/gdxfiles/*.gdx
 *.pyc
 *__pycache__
 
-# jupyter notebook checkpoints
+# jupyter notebook checkpoints and cruft
 *.ipynb_checkpoints*/
+*.virtual_documents*/
 
 # lst and g00 files
 *.lst
