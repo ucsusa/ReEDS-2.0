@@ -70,7 +70,7 @@ def read_h5py_file(filename: Path | str) -> pd.DataFrame:
             # load data
             df = pd.DataFrame(f[datakey][:])
             # check for indices
-            idx_cols = [c for c in keys if 'index' in c]
+            idx_cols = [c for c in keys if 'index' in c and 'name' not in c]
             idx_cols.sort()
             idx_cols_out = []
             # loop over indices and add to data
