@@ -542,7 +542,11 @@ def main(reeds_path, inputs_case):
         ### If using EFS-style demand with only a single 2012 weather year, concat each profile
         ### 7 times to match the 7-year VRE profiles
         num_years = 7
-        load_profiles_wide = load_profiles.unstack('year')
+        try:
+            load_profiles_wide = load_profiles.unstack('year')
+        except KeyError:
+            load_profiles.index = load_profiles.index.rename('year',level=0)
+            load_profiles_wide = load_profiles.unstack('year')
         if len(load_profiles_wide) == 8760:
             load_profiles = (
                 pd.concat([load_profiles_wide] * num_years, axis=0, ignore_index=True)
