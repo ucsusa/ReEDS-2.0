@@ -481,6 +481,7 @@ val_h2ptcreg.csv,,ignore,ignore,,,,0,none,,,,,,done
 val_r.csv,,ignore,ignore,0,,,0,none,,1,,,,done
 val_r_all.csv,,ignore,ignore,,,,0,none,,,,,,done
 val_st.csv,,ignore,ignore,,,,0,none,,,,,,done
+val_transmiso.csv,,ignore,ignore,,,,0,none,,,,,,done
 val_transgrp.csv,,ignore,ignore,,,,0,none,,,,,,done
 val_transreg.csv,,ignore,ignore,,,,0,none,,,,,,done
 val_usda_region.csv,,ignore,ignore,,,,0,none,,,,,,done
