@@ -39,7 +39,7 @@ GSw_SitingWindOns,"Specify the onshore wind siting scenario [reference, open, li
 GSw_TCPhaseout,"Switch for whether tax credit Phaseout is enabled (0=no, 1=yes)",1,,
 GSw_TransCapMaxAllTypes,[GW] maximum transmission capacity allowed across each individual BA-BA interface for all trtypes together (constraint is off if set to 0; must be 0 or >= existing capacity (26.13 for AC)),0,,
 GSw_TransInvMaxLongTerm,[TW-mile/year] maximum transmission capacity investment per year IN/AFTER firstyear_trans_longterm (constraint is OFF if set to 0 meaning unlimited trans investment; annual max since 2009 is ~3.64),0,1.07,1.07
-GSw_TransRestrict,hierarchy level within which to allow new transmission lines,country,transmiso,transmiso
+GSw_TransRestrict,hierarchy level within which to allow new transmission lines,country,transgrp,transgrp
 GSw_TransScen,"Select Transmission Scenario [default, LCC_all, LCC_SeamsD3_certain, etc]",default,,
 GSw_UpgradeCost_Mult,CCS upgrade cost scenario: 0=mid 1=adv 2=con,0,,
 GSw_VSC,Switch to turn on/off multi-terminal VSC HVDC macrogrid as an investment option,0,,
