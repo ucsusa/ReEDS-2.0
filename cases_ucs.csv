@@ -1,8 +1,8 @@
-case,Description,Default Value,UCS_EER_Current_LowDC_2035,UCS_Base
+case,Description,Default Value,transmiso,UCS_Base
 ignore,"0=run this case, 1=ignore this case",0,0,1
 AWS,Switch for when running on AWS,0,1,1
 timetype,Sequential or Intertemporal,seq,,
-yearset_suffix,Set of years that are modeled,3yr,,5yr
+yearset_suffix,Set of years that are modeled,3yr,,
 endyear,Last year to be modeled,2050,2035,
 distpvscen,Setting for distpv scenario,stscen2023_mid_case,,
 batteryscen,Battery cost and performance characteristics,battery_ATB_2024_moderate,,
@@ -39,7 +39,7 @@ GSw_SitingWindOns,"Specify the onshore wind siting scenario [reference, open, li
 GSw_TCPhaseout,"Switch for whether tax credit Phaseout is enabled (0=no, 1=yes)",1,,
 GSw_TransCapMaxAllTypes,[GW] maximum transmission capacity allowed across each individual BA-BA interface for all trtypes together (constraint is off if set to 0; must be 0 or >= existing capacity (26.13 for AC)),0,,
 GSw_TransInvMaxLongTerm,[TW-mile/year] maximum transmission capacity investment per year IN/AFTER firstyear_trans_longterm (constraint is OFF if set to 0 meaning unlimited trans investment; annual max since 2009 is ~3.64),0,1.07,1.07
-GSw_TransRestrict,hierarchy level within which to allow new transmission lines,country,transreg,transreg
+GSw_TransRestrict,hierarchy level within which to allow new transmission lines,country,transmiso,transmiso
 GSw_TransScen,"Select Transmission Scenario [default, LCC_all, LCC_SeamsD3_certain, etc]",default,,
 GSw_UpgradeCost_Mult,CCS upgrade cost scenario: 0=mid 1=adv 2=con,0,,
 GSw_VSC,Switch to turn on/off multi-terminal VSC HVDC macrogrid as an investment option,0,,
@@ -58,4 +58,4 @@ GSw_Upgrades,Turn on/off upgrades,1,,
 GSw_PRM_CapCredit,Use capacity credit formulation if 1 and stress period formulation if 0,0,1,1
 GSw_GenMandate,Turn on/off national Gen Requirement. 2 turns on and applies constraint at busbar.,0,1,
 GSw_GenMandateList,Select technology list for national generation standard (see inputs/national_generation/nat_gen_tech_frac.csv),RE,NuclearCCS,
-GSw_GenMandateScen,Select trajectory for national generation standard (see inputs/national_generation/gen_mandate_trajectory.csv),100_2035,90_2040,
+GSw_GenMandateScen,Select trajectory for national generation standard (see inputs/national_generation/gen_mandate_trajectory.csv),100_2035,90_2035_95_2050,
