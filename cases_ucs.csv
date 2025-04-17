@@ -1,4 +1,4 @@
-case,Description,Default Value,transmiso,UCS_Base
+case,Description,Default Value,EER_Current_LowDC_UCS,UCS_Base
 ignore,"0=run this case, 1=ignore this case",0,0,1
 AWS,Switch for when running on AWS,0,1,1
 timetype,Sequential or Intertemporal,seq,,
