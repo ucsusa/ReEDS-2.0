@@ -103,7 +103,7 @@ upgrade_derate(i,v,r,t)$upgrade_derate(i,v,r,t) = round(upgrade_derate(i,v,r,t),
 winter_cap_frac_delta(i,v,r)$winter_cap_frac_delta(i,v,r) = round(winter_cap_frac_delta(i,v,r),3) ;
 
 * Restrict UPV in LA, per PA and SG recommendation - SSS 4/9/25
-Set t_notallowed(t) / 2020*2032 / ;
+Set t_notallowed(t) / 2020*2028 / ;
 m_required_prescriptions("wind-ons",r,t_notallowed)$r_st(r,"LA") = 0 ;
 m_required_prescriptions("wind-ofs",r,t_notallowed)$r_st(r,"LA") = 0 ;
 INV.fx(i,v,r,t_notallowed)$[wind(i)$ r_st(r,'LA')] = 0 ;
