@@ -35,7 +35,6 @@ dependencies:
   - pytest=7.4 # for testing ReEDS-to-X compatibility
   - requests=2.31 # for vizit
   - tqdm=4.65 # for progress bars
-  - xarray
   ### ^^^
   - pip:
     - gdxpds==1.4.0
