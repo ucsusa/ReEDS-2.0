@@ -830,7 +830,28 @@ for i, row in regionFiles.iterrows():
                     if idx_name is None:
                         idx_name = idx_val
                     idx_values = df.index.get_level_values(idx_name)
-                    f.create_dataset(f'index{idx_val+1}_{idx_name}', data=idx_values, dtype=idx_values.dtype)
+                    if isinstance(idx_values[0], bytes):
+                        # if already formatted as bytes keep that way
+                        f.create_dataset(f'index_{idx_val}', data=idx_values, dtype='S30')
+                    elif idx_values.name in ['datetime', 'weather_datetime']:
+                        # if we have a formatted datetime index that isn't bytes, save as such
+                        try:
+                            timeindex = (
+                                idx_values.to_series().apply(datetime.datetime.isoformat).reset_index(drop=True)
+                            )
+                            f.create_dataset(f'index_{idx_val}', data=timeindex.str.encode('utf-8'), dtype='S30')
+                        except TypeError:
+                            timeindex = (
+                                pd.to_datetime(idx_values\
+                                            .to_series())\
+                                                .apply(datetime.datetime.isoformat)\
+                                                    .reset_index(drop=True)
+                            )
+                            f.create_dataset(f'index_{idx_val}', data=timeindex.str.encode('utf-8'), dtype='S30')
+                    else:
+                        # Other indices can be saved using their data type
+                        f.create_dataset(f'index_{idx_val}', data=idx_values, dtype=idx_values.dtype)
+                        
                 idx_val += 1
             # save column names as string type
             f.create_dataset('columns', data=df.columns, dtype=f'S{df.columns.map(len).max()}')
