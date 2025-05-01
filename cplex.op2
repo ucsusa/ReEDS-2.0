@@ -43,7 +43,7 @@ barepcomp = 1e-10
 *## https://iea-etsap.org/webinar/CPLEX%20options%20for%20running%20TIMES%20models.pdf
 
 *** numericalemphasis (boolean): emphasizes precision in numerically unstable or difficult problems [default 0]
-* numericalemphasis 1
+numericalemphasis 1
 
 *** depind (integer): dependency checker on/off. 3 = turn on at beginning and end of preprocessing [default -1]
 * depind 3

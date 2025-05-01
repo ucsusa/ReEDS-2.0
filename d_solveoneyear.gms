@@ -382,7 +382,15 @@ ReEDSmodel.optfile = %GSw_gopt% ;
 OPTION savepoint = 1 ;
 $endif.valstr
 
+ReEDSmodel.optfile = 1;
 solve ReEDSmodel minimizing z using lp ;
+
+if (ReEDSmodel.modelStat > 1,
+ReEDSmodel.optfile = 2;
+solve ReEDSmodel minimizing z using lp ;
+);
+
+
 tsolved(t)$tmodel(t) = yes ;
 
 if(Sw_NewValCapShrink = 1,
