@@ -1,6 +1,6 @@
 *** https://www.gams.com/latest/docs/S_CPLEX.html
 *** threads (integer): global default thread count
-threads = 8
+threads = 10
 
 *** lpmethod (integer): algorithm to be used for LP problems [4 = barrier]
 lpmethod = 4
@@ -9,7 +9,7 @@ lpmethod = 4
 advind 0
 
 *** reslim (integer): solve time limit in seconds [172800 seconds = 2 days]
-reslim 14400
+reslim 172800
 
 *** scaind (integer): matrix scaling on/off [1 = modified, more aggressive scaling method]
 scaind 1
