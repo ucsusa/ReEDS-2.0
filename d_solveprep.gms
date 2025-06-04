@@ -110,7 +110,6 @@ INV.fx(i,v,r,t_notallowed)$[wind(i)$ r_st(r,'LA')] = 0 ;
 
 * Restrict limit growth of wind technologies in MISO_South
 * values in -- MW --
-INV.up(i,v,r,t)$[wind(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2026)] = 33 ;
 INV.up(i,v,r,t)$[wind(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2029)] = 141 ;
 INV.up(i,v,r,t)$[wind(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2032)] = 231 ;
 INV.up(i,v,r,t)$[wind(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2035)] = 381 ;
@@ -123,7 +122,6 @@ INV.up(i,v,r,t)$[wind(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2050)] = 4590 
 
 * Restrict limit growth of storage technologies in MISO_South
 * values in -- MW --
-INV.up(i,v,r,t)$[storage(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2026)] = 2 ;
 INV.up(i,v,r,t)$[storage(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2029)] = 11 ;
 INV.up(i,v,r,t)$[storage(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2032)] = 21 ;
 INV.up(i,v,r,t)$[storage(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2035)] = 40 ;
