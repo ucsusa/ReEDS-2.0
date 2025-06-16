@@ -1,5 +1,5 @@
 case,Description,Default Value,CP_LowTrans_LowDC,CP_LowTrans_LowDC_NoIRA,CP_LowTrans_HighDC,CP_LowTrans_HighDC_NoIRA,ELC_MidTrans_HighDC_CES,ELC_MidTrans_HighDC_CES_NoIRA,ELC_MidTrans_LowDC_CES_NoIRA,ELC_MidTrans_LowDC_CES,CP_MidTrans_LowDC,CP_MidTrans_HighDC,CP_MidTrans_HighDC_NoIRA,CP_MidTrans_LowDC_NoIRA,CP_LowTrans_LowDC_CES,CP_MidTrans_LowDC_CES,CP_LowTrans_HighDC_CES,CP_MidTrans_HighDC_CES,CP_LowTrans_HighDC_CES_NoIRA,CP_MidTrans_HighDC_CES_NoIRA,CP_LowTrans_LowDC_CES_NoIRA,CP_MidTrans_LowDC_CES_NoIRA,ELC_LowTrans_LowDC_CES,ELC_LowTrans_HighDC_CES,ELC_LowTrans_HighDC_CES_NoIRA,ELC_LowTrans_LowDC_CES_NoIRA
-ignore,"0=run this case, 1=ignore this case",0,1,1,1,1,1,0,0,1,1,1,0,0,1,1,1,1,0,0,0,0,1,1,0,0
+ignore,"0=run this case, 1=ignore this case",0,1,1,0,1,0,1,1,0,0,0,1,1,0,0,0,0,1,1,1,1,0,0,1,1
 AWS,Switch for when running on AWS,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 timetype,Sequential or Intertemporal,seq,,,,,,,,,,,,,,,,,,,,,,,,
 yearset_suffix,Set of years that are modeled,3yr,,,,,,,,,,,,,,,,,,,,,,,,
