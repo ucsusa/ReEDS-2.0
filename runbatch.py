@@ -1457,13 +1457,13 @@ def runModel(options, caseSwitches, niter, reeds_path, ccworkers, startiter,
         #         write_delete_file(checkfile=file, deletefile=file, PATH=OPATH)
         #     OPATH.writelines('')
 
-        # if int(caseSwitches['transmission_maps']):
-        #     OPATH.writelines('python postprocessing/transmission_maps.py -c {} -y {}\n'.format(
-        #         casedir, (
-        #             solveyears[-1]
-        #             if int(caseSwitches['transmission_maps']) > int(solveyears[-1])
-        #             else caseSwitches['transmission_maps'])
-        #     ))
+        if int(caseSwitches['transmission_maps']):
+            OPATH.writelines('python postprocessing/transmission_maps.py -c {} -y {}\n'.format(
+                casedir, (
+                    solveyears[-1]
+                    if int(caseSwitches['transmission_maps']) > int(solveyears[-1])
+                    else caseSwitches['transmission_maps'])
+            ))
 
         ### Write the call to the R2X tests
         pipe = '2>&1 | tee -a' if LINUXORMAC else '>>'
