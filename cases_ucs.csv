@@ -1,5 +1,5 @@
 case,Description,Default Value,ST_CO2_LowTrans_LowDC_NoIRA,ST_CO2_LowTrans_HighDC_NoIRA,ST_CO2_MidTrans_LowDC_NoIRA,ST_CO2_MidTrans_HighDC_NoIRA,ST_CO2_LowTrans_LowDC,ST_CO2_LowTrans_HighDC,ST_CO2_MidTrans_LowDC,ST_CO2_MidTrans_HighDC
-ignore,"0=run this case, 1=ignore this case",0,0,0,0,0,0,0,0,0
+ignore,"0=run this case, 1=ignore this case",0,1,1,0,0,1,1,0,0
 AWS,Switch for when running on AWS,0,1,1,1,1,1,1,1,1
 timetype,Sequential or Intertemporal,seq,,,,,,,,
 yearset_suffix,Set of years that are modeled,3yr,,,,,,,,
