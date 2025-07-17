@@ -102,11 +102,42 @@ trans_cost_cap_fin_mult_noITC(t) = round(trans_cost_cap_fin_mult_noITC(t),3) ;
 upgrade_derate(i,v,r,t)$upgrade_derate(i,v,r,t) = round(upgrade_derate(i,v,r,t),3) ;
 winter_cap_frac_delta(i,v,r)$winter_cap_frac_delta(i,v,r) = round(winter_cap_frac_delta(i,v,r),3) ;
 
-* Restrict UPV in LA, per PA and SG recommendation - SSS 4/9/25
+* Restrict WIND in LA, per PA and SG recommendation - SSS 4/9/25
 Set t_notallowed(t) / 2020*2028 / ;
 m_required_prescriptions("wind-ons",r,t_notallowed)$r_st(r,"LA") = 0 ;
 m_required_prescriptions("wind-ofs",r,t_notallowed)$r_st(r,"LA") = 0 ;
 INV.fx(i,v,r,t_notallowed)$[wind(i)$ r_st(r,'LA')] = 0 ;
+* Restrict GAS in LA, per PA - SSS 7/14/25
+Set t_gasnotallowed(t) / 2030*2050 / ;
+m_required_prescriptions("gas",r,t_gasnotallowed)$r_st(r,"LA") = 0 ;
+INV.fx(i,v,r,t_gasnotallowed)$[gas(i)$ r_st(r,'LA')] = 0 ;
+
+
+* Restrict limit growth of wind technologies in MISO_South
+* values in -- MW --
+INV.up(i,v,r,t)$[wind(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2026)] = ??? ;
+INV.up(i,v,r,t)$[wind(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2029)] = ??? ;
+INV.up(i,v,r,t)$[wind(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2032)] = ??? ;
+INV.up(i,v,r,t)$[wind(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2035)] = ??? ;
+INV.up(i,v,r,t)$[wind(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2038)] = ??? ;
+INV.up(i,v,r,t)$[wind(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2041)] = ??? ;
+INV.up(i,v,r,t)$[wind(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2044)] = ??? ;
+INV.up(i,v,r,t)$[wind(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2047)] = ??? ;
+INV.up(i,v,r,t)$[wind(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2050)] = ??? ;
+
+
+* Restrict limit growth of storage technologies in MISO_South
+* values in -- MW --
+INV.up(i,v,r,t)$[storage(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2026)] = ??? ;
+INV.up(i,v,r,t)$[storage(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2029)] = ??? ;
+INV.up(i,v,r,t)$[storage(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2032)] = ??? ;
+INV.up(i,v,r,t)$[storage(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2035)] = ??? ;
+INV.up(i,v,r,t)$[storage(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2038)] = ??? ;
+INV.up(i,v,r,t)$[storage(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2041)] = ??? ;
+INV.up(i,v,r,t)$[storage(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2044)] = ??? ;
+INV.up(i,v,r,t)$[storage(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2047)] = ??? ;
+INV.up(i,v,r,t)$[storage(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2050)] = ??? ;
+
 
 
 *================================================
