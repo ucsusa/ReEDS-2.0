@@ -113,33 +113,6 @@ m_required_prescriptions("gas",r,t_gasnotallowed)$r_st(r,"LA") = 0 ;
 INV.fx(i,v,r,t_gasnotallowed)$[gas(i)$ r_st(r,'LA')] = 0 ;
 
 
-* Restrict limit growth of wind technologies in MISO_South
-* values in -- MW --
-INV.up(i,v,r,t)$[wind(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2026)] = ??? ;
-INV.up(i,v,r,t)$[wind(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2029)] = ??? ;
-INV.up(i,v,r,t)$[wind(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2032)] = ??? ;
-INV.up(i,v,r,t)$[wind(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2035)] = ??? ;
-INV.up(i,v,r,t)$[wind(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2038)] = ??? ;
-INV.up(i,v,r,t)$[wind(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2041)] = ??? ;
-INV.up(i,v,r,t)$[wind(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2044)] = ??? ;
-INV.up(i,v,r,t)$[wind(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2047)] = ??? ;
-INV.up(i,v,r,t)$[wind(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2050)] = ??? ;
-
-
-* Restrict limit growth of storage technologies in MISO_South
-* values in -- MW --
-INV.up(i,v,r,t)$[storage(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2026)] = ??? ;
-INV.up(i,v,r,t)$[storage(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2029)] = ??? ;
-INV.up(i,v,r,t)$[storage(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2032)] = ??? ;
-INV.up(i,v,r,t)$[storage(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2035)] = ??? ;
-INV.up(i,v,r,t)$[storage(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2038)] = ??? ;
-INV.up(i,v,r,t)$[storage(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2041)] = ??? ;
-INV.up(i,v,r,t)$[storage(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2044)] = ??? ;
-INV.up(i,v,r,t)$[storage(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2047)] = ??? ;
-INV.up(i,v,r,t)$[storage(i)$r_transgrp(r, "MISO_South")$ (yeart(t) = 2050)] = ??? ;
-
-
-
 *================================================
 * --- SEQUENTIAL SETUP ---
 *================================================
