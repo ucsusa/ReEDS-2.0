@@ -102,11 +102,16 @@ trans_cost_cap_fin_mult_noITC(t) = round(trans_cost_cap_fin_mult_noITC(t),3) ;
 upgrade_derate(i,v,r,t)$upgrade_derate(i,v,r,t) = round(upgrade_derate(i,v,r,t),3) ;
 winter_cap_frac_delta(i,v,r)$winter_cap_frac_delta(i,v,r) = round(winter_cap_frac_delta(i,v,r),3) ;
 
-* Restrict UPV in LA, per PA and SG recommendation - SSS 4/9/25
+* Restrict WIND in LA, per PA and SG recommendation - SSS 4/9/25
 Set t_notallowed(t) / 2020*2028 / ;
 m_required_prescriptions("wind-ons",r,t_notallowed)$r_st(r,"LA") = 0 ;
 m_required_prescriptions("wind-ofs",r,t_notallowed)$r_st(r,"LA") = 0 ;
 INV.fx(i,v,r,t_notallowed)$[wind(i)$ r_st(r,'LA')] = 0 ;
+* Restrict GAS in LA, per PA - SSS 7/14/25
+Set t_gasnotallowed(t) / 2030*2050 / ;
+INV.fx(i,v,r,t_gasnotallowed)$[gas(i)$ r_st(r,'LA')] = 0 ;
+*Restrict O-G-S in LA - SGD 7/21/25
+INV.fx(i,v,r,t_gasnotallowed)$[ogs(i)$ r_st(r,'LA')] = 0 ;
 
 
 *================================================
