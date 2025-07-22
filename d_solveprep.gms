@@ -109,8 +109,9 @@ m_required_prescriptions("wind-ofs",r,t_notallowed)$r_st(r,"LA") = 0 ;
 INV.fx(i,v,r,t_notallowed)$[wind(i)$ r_st(r,'LA')] = 0 ;
 * Restrict GAS in LA, per PA - SSS 7/14/25
 Set t_gasnotallowed(t) / 2030*2050 / ;
-m_required_prescriptions("gas",r,t_gasnotallowed)$r_st(r,"LA") = 0 ;
 INV.fx(i,v,r,t_gasnotallowed)$[gas(i)$ r_st(r,'LA')] = 0 ;
+*Restrict O-G-S in LA - SGD 7/21/25
+INV.fx(i,v,r,t_gasnotallowed)$[ogs(i)$ r_st(r,'LA')] = 0 ;
 
 
 *================================================
