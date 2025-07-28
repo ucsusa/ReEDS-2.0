@@ -33,7 +33,7 @@ epopt = 1e-5
 *epmrk = 0.1
 
 *** barepcomp (float): tolerance on complementarity for convergence of the barrier algorithm [default 1e-8]
-barepcomp = 1e-10
+barepcomp = 1e-8
 
 *############################################################################################
 *## The settings below can reduce solve time substantially, but their impacts on the solution
