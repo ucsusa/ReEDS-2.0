@@ -1,5 +1,5 @@
 case,Description,Default Value,ST_CO2_LowTrans_LowDC_NoIRA,ST_CO2_LowTrans_HighDC_NoIRA,ST_CO2_MidTrans_LowDC_NoIRA,ST_CO2_MidTrans_HighDC_NoIRA,ST_CO2_LowTrans_LowDC,ST_CO2_LowTrans_HighDC,ST_CO2_MidTrans_LowDC,ST_CO2_MidTrans_HighDC
-ignore,"0=run this case, 1=ignore this case",0,1,1,0,0,1,1,0,0
+ignore,"0=run this case, 1=ignore this case",0,1,1,1,0,1,1,1,1
 AWS,Switch for when running on AWS,0,1,1,1,1,1,1,1,1
 timetype,Sequential or Intertemporal,seq,,,,,,,,
 yearset_suffix,Set of years that are modeled,3yr,,,,,,,,
@@ -59,3 +59,4 @@ GSw_PRM_CapCredit,Use capacity credit formulation if 1 and stress period formula
 GSw_GenMandate,Turn on/off national Gen Requirement. 2 turns on and applies constraint at busbar.,0,,,,,,,,
 GSw_GenMandateList,Select technology list for national generation standard (see inputs/national_generation/nat_gen_tech_frac.csv),RE,,,,,,,,
 GSw_GenMandateScen,Select trajectory for national generation standard (see inputs/national_generation/gen_mandate_trajectory.csv),100_2035,,,,,,,,
+"GSw_StateCO2ImportLevel	",Hierarchy level within which to calculate CO2 emissions rate [metric ton/MWh] for state CO2 caps,interconnect,st,st,st,st,st,st,st,st
