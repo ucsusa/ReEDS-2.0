@@ -1,5 +1,5 @@
 case,Description,Default Value,CP_LowTrans_LowDC_OBBBA,CP_LowTrans_HighDC_OBBBA,CP_MidTrans_HighDC_95by2050,CP_MidTrans_LowDC_95by2050,CP_LowTrans_LowDC,CP_LowTrans_HighDC
-ignore,"0=run this case, 1=ignore this case",0,0,1,1,1,0,0
+ignore,"0=run this case, 1=ignore this case",0,0,0,0,0,0,0
 AWS,Switch for when running on AWS,0,1,1,1,1,1,1
 timetype,Sequential or Intertemporal,seq,,,,,,
 yearset_suffix,Set of years that are modeled,3yr,,,,,,
