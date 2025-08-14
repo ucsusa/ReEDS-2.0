@@ -1,9 +1,9 @@
-case,Description,Default Value,LA_CO2_MidTrans_LowDC_NoIRA,LA_CO2_MidTrans_HighDC_NoIRA,LA_CO2_MidTrans_HighDC,TEST_LA_CO2_MidTrans_HighDC_NoIRA
-ignore,"0=run this case, 1=ignore this case",0,1,1,1,0
+case,Description,Default Value,ST_CO2_MidTrans_LowDC_OBBBA,ST_CO2_MidTrans_HighDC_OBBBA,ST_CO2_MidTrans_HighDC,ST_CO2_MidTrans_LowDC
+ignore,"0=run this case, 1=ignore this case",0,0,0,0,0
 AWS,Switch for when running on AWS,0,1,1,1,1
 timetype,Sequential or Intertemporal,seq,,,,
 yearset_suffix,Set of years that are modeled,3yr,,,,
-endyear,Last year to be modeled,2050,,,,2035
+endyear,Last year to be modeled,2050,,,,
 distpvscen,Setting for distpv scenario,stscen2023_mid_case_95_by_2050,,,,
 batteryscen,Battery cost and performance characteristics,battery_ATB_2024_moderate,,,,
 convscen,Conventional generators cost and performance characteristics,conv_ATB_2024,conv_ATB_2024_con_ccs_nuke,conv_ATB_2024_con_ccs_nuke,conv_ATB_2024_con_ccs_nuke,conv_ATB_2024_con_ccs_nuke
@@ -11,7 +11,7 @@ cspscen,CSP cost and performance characteristics,csp_ATB_2024_moderate,,,,
 geodiscov,Annual discover rates for new geothermal sites,BAU,,,,
 geoscen,Geothermal cost projections,geo_ATB_2024_moderate,,,,
 hydroscen,Hydropower cost setting,hydro_ATB_2019_mid,,,,
-incentives_suffix,File suffix for incentive definition,ira,none,none,,none
+incentives_suffix,File suffix for incentive definition,ira,obbba,obbba,,
 ngscen,Natural gas price scenario,AEO_2023_reference,,,,
 upvscen,UPV cost and performance characteristics,upv_ATB_2024_moderate,,,,
 onswindscen,Onshore wind cost and performance characteristics,ons-wind_ATB_2024_moderate,,,,
@@ -22,7 +22,7 @@ GSw_AnnualCapCO2e,"Specify whether to include non-CO2 GHGs in annual CO2 cap, ch
 GSw_BECCS,Turn on/off BECCS technology,1,,,,
 GSw_CCS,Turn on/off all CCS,1,,,,
 GSw_DAC,"Turn on or off the representation of direct air capture [0 = off, 1 = on with projection specified by dacscen]",0,,,,
-GSw_EFS1_AllYearLoad,"Switch to choose EFS profiles - e.g. historic, EPREFERENCE, EPMEDIUM, EPHIGH",EER_IRAlow,EER_Current_LowDC_UCS,EER_Current_HighDC_UCS,EER_Current_HighDC_UCS,EER_Current_HighDC_UCS
+GSw_EFS1_AllYearLoad,"Switch to choose EFS profiles - e.g. historic, EPREFERENCE, EPMEDIUM, EPHIGH",EER_IRAlow,EER_Current_LowDC_UCS,EER_Current_HighDC_UCS,EER_Current_HighDC_UCS,EER_Current_LowDC_UCS
 GSw_Geothermal,"Geothermal can be turned off [0], left to the default representation [1], or have an extended representation [2]",2,,,,
 GSw_GrowthAbsCon,Turn on/off absolute growth constraint,1,,,,
 GSw_GrowthPenalties,Turn on/off relative growth penalties,1,,,,
