@@ -1,4 +1,4 @@
-case,Description,Default Value,LA_NoGas_MidTrans_LowDC_NoIRA,LA_NoGas_MidTrans_HighDC_NoIRA
+case,Description,Default Value,LA_NoGas_MidTrans_LowDC_OBBBA,LA_NoGas_MidTrans_HighDC_OBBBA
 ignore,"0=run this case, 1=ignore this case",0,0,0
 AWS,Switch for when running on AWS,0,1,1
 timetype,Sequential or Intertemporal,seq,,
@@ -11,7 +11,7 @@ cspscen,CSP cost and performance characteristics,csp_ATB_2024_moderate,,
 geodiscov,Annual discover rates for new geothermal sites,BAU,,
 geoscen,Geothermal cost projections,geo_ATB_2024_moderate,,
 hydroscen,Hydropower cost setting,hydro_ATB_2019_mid,,
-incentives_suffix,File suffix for incentive definition,ira,none,none
+incentives_suffix,File suffix for incentive definition,ira,obbba,obbba
 ngscen,Natural gas price scenario,AEO_2023_reference,,
 upvscen,UPV cost and performance characteristics,upv_ATB_2024_moderate,,
 onswindscen,Onshore wind cost and performance characteristics,ons-wind_ATB_2024_moderate,,
